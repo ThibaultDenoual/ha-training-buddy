@@ -1,0 +1,45 @@
+name: Bug report
+description: Report a problem with Training Buddy
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please include logs and diagnostics where possible.
+  - type: input
+    id: ha_version
+    attributes:
+      label: Home Assistant version
+      placeholder: "2025.x.x"
+    validations:
+      required: true
+  - type: input
+    id: tb_version
+    attributes:
+      label: Training Buddy version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Create exercise ...
+        2. Start session ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / diagnostics
+      description: Relevant log lines and the integration's downloaded diagnostics.
+      render: shell

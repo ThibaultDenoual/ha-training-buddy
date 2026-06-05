@@ -1,0 +1,37 @@
+name: Feature request / roadmap item
+description: Propose new functionality or pick up a roadmap item
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: roadmap_label
+    attributes:
+      label: Roadmap classification
+      description: See docs/ROADMAP.md.
+      options:
+        - MVP
+        - Post-MVP
+        - Nice-to-have
+        - Technical debt
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / motivation
+      description: What are you trying to achieve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: |
+        Describe the feature. If it touches the domain core, note how it keeps
+        models.py / session_engine.py / statistics.py free of Home Assistant
+        imports (see CLAUDE.md).
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
