@@ -1,0 +1,175 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up Training Buddy",
+        "description": "Training Buddy manages your workout exercises, rounds and sessions. After setup, use the integration's Configure button to add exercises, rounds and sessions."
+      }
+    },
+    "abort": {
+      "already_configured": "Training Buddy is already set up.",
+      "single_instance_allowed": "Only a single instance of Training Buddy is allowed."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Manage Training Buddy",
+        "description": "Add or remove exercises, rounds and sessions.",
+        "menu_options": {
+          "add_exercise": "Add exercise",
+          "delete_exercise": "Delete exercise",
+          "add_round": "Add round",
+          "add_round_entry": "Add exercise to a round",
+          "delete_round": "Delete round",
+          "add_session": "Add session",
+          "delete_session": "Delete session",
+          "finish": "Done"
+        }
+      },
+      "add_exercise": {
+        "title": "Add exercise",
+        "data": {
+          "name": "Name",
+          "type": "Type"
+        }
+      },
+      "delete_exercise": {
+        "title": "Delete exercise",
+        "data": {
+          "exercise_id": "Exercise"
+        }
+      },
+      "add_round": {
+        "title": "Add round",
+        "data": {
+          "name": "Name"
+        }
+      },
+      "add_round_entry": {
+        "title": "Add exercise to a round",
+        "description": "Pick a round and an exercise, then set the target (repetitions for repetition exercises, seconds for timed/rest exercises).",
+        "data": {
+          "round_id": "Round",
+          "exercise_id": "Exercise",
+          "target": "Target (reps or seconds)"
+        }
+      },
+      "delete_round": {
+        "title": "Delete round",
+        "data": {
+          "round_id": "Round"
+        }
+      },
+      "add_session": {
+        "title": "Add session",
+        "data": {
+          "name": "Name",
+          "warmup_round_id": "Warm-up round",
+          "circuit_round_id": "Circuit round"
+        }
+      },
+      "delete_session": {
+        "title": "Delete session",
+        "data": {
+          "session_id": "Session"
+        }
+      }
+    },
+    "error": {
+      "invalid_name": "The name must not be empty."
+    }
+  },
+  "selector": {
+    "exercise_type": {
+      "options": {
+        "repetition": "Repetition",
+        "timed": "Timed",
+        "rest": "Rest"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "current_exercise": { "name": "Current Exercise" },
+      "current_round": { "name": "Current Round" },
+      "session_progress": { "name": "Session Progress" },
+      "circuit_loop_count": { "name": "Circuit Loop Count" },
+      "active_session_name": { "name": "Active Session Name" },
+      "session_status": {
+        "name": "Session Status",
+        "state": {
+          "idle": "Idle",
+          "running": "Running",
+          "paused": "Paused",
+          "awaiting_continue": "Awaiting continue",
+          "completed": "Completed"
+        }
+      },
+      "times_completed": { "name": "Times Completed" },
+      "last_completed": { "name": "Last Completed" },
+      "longest_streak": { "name": "Longest Streak" },
+      "total_reps": { "name": "Total Reps" },
+      "personal_best": { "name": "Personal Best" },
+      "weekly_reps": { "name": "Weekly Reps" },
+      "monthly_reps": { "name": "Monthly Reps" },
+      "total_duration": { "name": "Total Duration" },
+      "longest_duration": { "name": "Longest Duration" }
+    },
+    "binary_sensor": {
+      "workout_active": { "name": "Workout Active" },
+      "workout_paused": { "name": "Workout Paused" }
+    },
+    "button": {
+      "start_session": { "name": "Start Session" },
+      "pause_session": { "name": "Pause Session" },
+      "resume_session": { "name": "Resume Session" },
+      "stop_session": { "name": "Stop Session" },
+      "complete_exercise": { "name": "Complete Exercise" },
+      "skip_exercise": { "name": "Skip Exercise" },
+      "continue_circuit": { "name": "Continue Circuit" }
+    }
+  },
+  "services": {
+    "start_session": {
+      "name": "Start session",
+      "description": "Start a workout session.",
+      "fields": {
+        "session_id": {
+          "name": "Session ID",
+          "description": "The identifier of the session to start."
+        }
+      }
+    },
+    "pause_session": {
+      "name": "Pause session",
+      "description": "Pause the active session."
+    },
+    "resume_session": {
+      "name": "Resume session",
+      "description": "Resume the paused session."
+    },
+    "stop_session": {
+      "name": "Stop session",
+      "description": "Stop and clear the active session."
+    },
+    "complete_exercise": {
+      "name": "Complete exercise",
+      "description": "Mark the current exercise as completed.",
+      "fields": {
+        "reps": {
+          "name": "Repetitions",
+          "description": "Actual repetitions performed (repetition exercises only). Defaults to the planned target."
+        }
+      }
+    },
+    "skip_exercise": {
+      "name": "Skip exercise",
+      "description": "Skip the current exercise without recording statistics."
+    },
+    "continue_circuit": {
+      "name": "Continue circuit",
+      "description": "Start another circuit loop after the circuit completed."
+    }
+  }
+}

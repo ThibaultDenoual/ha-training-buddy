@@ -1,0 +1,28 @@
+start_session:
+  fields:
+    session_id:
+      required: true
+      example: "a1b2c3d4"
+      selector:
+        text:
+
+pause_session:
+
+resume_session:
+
+stop_session:
+
+complete_exercise:
+  fields:
+    reps:
+      required: false
+      example: 20
+      selector:
+        number:
+          min: 0
+          max: 1000
+          mode: box
+
+skip_exercise:
+
+continue_circuit:
