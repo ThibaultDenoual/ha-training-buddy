@@ -1,0 +1,13 @@
+{
+  "domain": "training_buddy",
+  "name": "Training Buddy",
+  "codeowners": ["@thibaultdenoual"],
+  "config_flow": true,
+  "documentation": "https://github.com/thibaultdenoual/ha-training-buddy",
+  "integration_type": "hub",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/thibaultdenoual/ha-training-buddy/issues",
+  "requirements": [],
+  "single_config_entry": true,
+  "version": "0.1.0"
+}
